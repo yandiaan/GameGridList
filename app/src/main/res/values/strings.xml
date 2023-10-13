@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Game Grid List</string>
+    <string name="game_1_title">Horizon Zero Dawn</string>
+    <string name="game_1_genre">Action RPG</string>
+
+    <string name="game_2_title">The Legend of Zelda: Breath of the Wild</string>
+    <string name="game_2_genre">Action-Adventure</string>
+
+    <string name="game_3_title">Overwatch</string>
+    <string name="game_3_genre">First-Person Shooter</string>
+
+    <string name="game_4_title">Stardew Valley</string>
+    <string name="game_4_genre">Simulation</string>
+
+    <string name="game_5_title">Fortnite</string>
+    <string name="game_5_genre">Battle Royale</string>
+
+    <string name="game_6_title">Mass Effect 2</string>
+    <string name="game_6_genre">Action RPG</string>
+
+    <string name="game_7_title">Minecraft</string>
+    <string name="game_7_genre">Sandbox</string>
+
+    <string name="game_8_title">Dark Souls III</string>
+    <string name="game_8_genre">Action RPG</string>
+
+    <string name="game_9_title">The Sims 4</string>
+    <string name="game_9_genre">Simulation</string>
+
+    <string name="game_10_title">Red Dead Redemption 2</string>
+    <string name="game_10_genre">Action-Adventure</string>
+
+    <string name="game_11_title">Rocket League</string>
+    <string name="game_11_genre">Sports</string>
+
+    <string name="game_12_title">Assassin\'s Creed Odyssey</string>
+    <string name="game_12_genre">Action RPG</string>
+
+    <string name="game_13_title">Cuphead</string>
+    <string name="game_13_genre">Run and Gun</string>
+
+    <string name="game_14_title">Splatoon 2</string>
+    <string name="game_14_genre">Third-Person Shooter</string>
+
+    <string name="game_15_title">Far Cry 5</string>
+    <string name="game_15_genre">First-Person Shooter</string>
+</resources>

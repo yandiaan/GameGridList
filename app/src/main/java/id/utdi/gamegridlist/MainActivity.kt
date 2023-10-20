@@ -10,11 +10,13 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -83,6 +85,9 @@ fun GameGrid(modifier: Modifier = Modifier) {
 // Fungsi komposisi untuk menampilkan detail game dalam kartu
 @Composable
 fun GameCard(game: Game) {
+    // State untuk melacak apakah dialog detail harus ditampilkan
+    var isDetailDialogVisible by remember { mutableStateOf(false) }
+
     // Komposisi Card digunakan untuk menampilkan elemen dalam bentuk kartu
     Card(
         modifier = Modifier
@@ -141,6 +146,45 @@ fun GameCard(game: Game) {
                         )
                     )
                 )
+
+                // Tambahkan tombol detail untuk menampilkan dialog
+                Button(
+                    onClick = { isDetailDialogVisible = true },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 8.dp)
+                ) {
+                    Text(text = "Details")
+                }
+
+                // Tampilkan dialog detail jika tombol detail ditekan
+                if (isDetailDialogVisible) {
+                    AlertDialog(
+                        onDismissRequest = { isDetailDialogVisible = false },
+                        title = { Text(text = "Game Details") },
+                        text = {
+                            Column {
+                                Image(
+                                    painter = painterResource(id = game.image),
+                                    contentDescription = null,
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .height(200.dp)
+                                        .clip(shape = RoundedCornerShape(8.dp)),
+                                    contentScale = ContentScale.Crop
+                                )
+                                Spacer(modifier = Modifier.height(8.dp))
+                                Text(text = "Title: ${stringResource(id = game.title)}")
+                                Text(text = "Genre: ${stringResource(id = game.genre)}")
+                            }
+                        },
+                        confirmButton = {
+                            Button(onClick = { isDetailDialogVisible = false }) {
+                                Text(text = "OK")
+                            }
+                        }
+                    )
+                }
             }
         }
     }
